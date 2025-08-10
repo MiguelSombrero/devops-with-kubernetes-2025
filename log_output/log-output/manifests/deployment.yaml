@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: log-output-app
-          image: miguelsombrero/log-output-app:latest
+          image: miguelsombrero/log-output-app@sha256:8a7c70836562bdca465714032cb3d94ecc697a5053815934091264ef9c7625f1
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
