@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: miguelsombrero/todo-app:latest
+          image: miguelsombrero/todo-app@sha256:f8c537eb0a9a007bac54a2b3f74b4eb59ca4092c5749bbe4ad190353903b18d3
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
