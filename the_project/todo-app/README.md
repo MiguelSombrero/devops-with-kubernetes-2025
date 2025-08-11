@@ -14,6 +14,9 @@ There was some mystical problems when running the app in a k3d cluster, so I had
 
 It might have something to do with Mac M2 (ARM-architecture) machine which I use for building the image, so I made multi-arch image.
 
+EDIT: maybe it was something else since images seems to be working now with basic `docker build` command too.
+Anyway, here are the commands for multi-arch image just in case:
+
 ### Build and push multi-arch image
 
 Requires login to Docker Hub. Run command in todo-app directory.
