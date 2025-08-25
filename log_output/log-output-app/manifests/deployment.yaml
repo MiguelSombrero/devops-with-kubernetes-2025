@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-output-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-output-app
+  template:
+    metadata:
+      labels:
+        app: log-output-app
+    spec:
+      volumes:
+        - name: shared-logs
+          emptyDir: {}
+      containers:
+        - name: log-output-writer-app
+          image: miguelsombrero/log-output-writer-app@sha256:d7e8b47fbae142435a8278bef26dbc90c5c1e5ab9bb8032e8441e0878b910055
+          volumeMounts:
+          - name: shared-logs
+            mountPath: /usr/src/app/files
+
+        - name: log-output-reader-app
+          image: miguelsombrero/log-output-reader-app@sha256:0c3b97b7c8a30a2c3451b96c1d5da22e5bad86a10a1ad694ef3ea59d13f1fccc
+          volumeMounts:
+          - name: shared-logs
+            mountPath: /usr/src/app/files
