@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/string")
+@RequestMapping("/")
 public class StringController {
 
     private final RandomStringLogger stringLogger;

@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: log-output-dep
+  name: ping-pong-dep
   labels:
-    app: log-output-app
+    app: ping-pong-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: log-output-app
+      app: ping-pong-app
   template:
     metadata:
       labels:
-        app: log-output-app
+        app: ping-pong-app
     spec:
       containers:
-        - name: log-output-app
-          image: miguelsombrero/log-output-app@sha256:72730561baada0f969680728adbda7be7bedec91a70178efce30ca338721112f
+        - name: ping-pong-app
+          image: miguelsombrero/ping-pong-app@sha256:a28a25423027257ba85942fb049c1d21b39f95d19b9832514d81f137a7c82c36
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
