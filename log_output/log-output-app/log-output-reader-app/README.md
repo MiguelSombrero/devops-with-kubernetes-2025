@@ -1,13 +1,5 @@
 # log-output-reader-app
 
-## Deploy to Kubernetes
-
-Run command in root directory.
-
-```bash
-    kubectl apply -f manifests
-```
-
 ## Use
 
 Call API when running in k3d cluster:

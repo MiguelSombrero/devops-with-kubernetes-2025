@@ -1,4 +1,4 @@
-package com.github.miguelsombrero.devopswithkubernetes.log_output.log;
+package com.github.miguelsombrero.devopswithkubernetes.ping_pong_app.writer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,11 +11,11 @@ import java.nio.file.StandardOpenOption;
 
 @Slf4j
 @Component
-public class FilesystemLogOutputWriter implements LogOutputWriter {
+public class FilesystemOutputWriter implements OutputWriter {
 
     private final String filePath;
 
-    public FilesystemLogOutputWriter(@Value("${file.path}") String filePath) {
+    public FilesystemOutputWriter(@Value("${file.path}") String filePath) {
         this.filePath = filePath;
     }
 

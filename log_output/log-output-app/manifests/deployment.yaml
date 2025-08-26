@@ -14,16 +14,21 @@ spec:
     spec:
       volumes:
         - name: shared-logs
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: shared-logs-claim
       containers:
         - name: log-output-writer-app
-          image: miguelsombrero/log-output-writer-app@sha256:d7e8b47fbae142435a8278bef26dbc90c5c1e5ab9bb8032e8441e0878b910055
+          image: miguelsombrero/log-output-writer-app@sha256:16b1f58e5cd1d40347324b538e3a3098132f893761aea022aefdb5a96427257b
+          ports:
+            - containerPort: 8090
           volumeMounts:
           - name: shared-logs
             mountPath: /usr/src/app/files
 
         - name: log-output-reader-app
-          image: miguelsombrero/log-output-reader-app@sha256:0c3b97b7c8a30a2c3451b96c1d5da22e5bad86a10a1ad694ef3ea59d13f1fccc
+          image: miguelsombrero/log-output-reader-app@sha256:e424481c6d53cf0c3f5f1819ff443e879f6427f3e585b9efef738abbcb6b0b34
+          ports:
+            - containerPort: 8091
           volumeMounts:
           - name: shared-logs
             mountPath: /usr/src/app/files

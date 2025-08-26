@@ -1,13 +1,5 @@
 # log-output-writer-app
 
-## Deploy to Kubernetes
-
-Run command in root directory.
-
-```bash
-    kubectl apply -f manifests
-```
-
 ## For developer (me)
 
 Build image and push it to Docker Hub:
