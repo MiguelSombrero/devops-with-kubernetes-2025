@@ -1,26 +1,23 @@
 package com.github.miguelsombrero.devopswithkubernetes.ping_pong_app.pong;
 
-import com.github.miguelsombrero.devopswithkubernetes.ping_pong_app.writer.OutputWriter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/pingpong")
+@RequestMapping
 public class PongController {
-
-    private final OutputWriter writer;
+    private static final String text = "Ping / Pongs: ";
 
     private int count = 0;
 
-    public PongController(OutputWriter writer) {
-        this.writer = writer;
+    @GetMapping("/pingpong")
+    public String pong() {
+        return text + count++;
     }
 
-    @GetMapping
-    public String pong() {
-        String result = "Ping / Pongs: " + count++;
-        writer.write(result);
-        return result;
+    @GetMapping("/pings")
+    public String getPings() {
+        return text + count;
     }
 }

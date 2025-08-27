@@ -14,15 +14,8 @@ spec:
       labels:
         app: ping-pong-app
     spec:
-      volumes:
-        - name: shared-logs
-          persistentVolumeClaim:
-            claimName: shared-logs-claim
       containers:
         - name: ping-pong-app
-          image: miguelsombrero/ping-pong-app@sha256:6f3b892e01cfe0625e04925a7dcf1b64fd7bdd9a397f414840a36cee65907983
+          image: miguelsombrero/ping-pong-app@sha256:2dab63161b073c4a55dd3db0204af94ef55aca3584ffcf77ba219005658ac1b8
           ports:
             - containerPort: 8092
-          volumeMounts:
-          - name: shared-logs
-            mountPath: /usr/src/app/files

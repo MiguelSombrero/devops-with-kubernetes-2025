@@ -26,7 +26,7 @@ spec:
             mountPath: /usr/src/app/files
 
         - name: log-output-reader-app
-          image: miguelsombrero/log-output-reader-app@sha256:e424481c6d53cf0c3f5f1819ff443e879f6427f3e585b9efef738abbcb6b0b34
+          image: miguelsombrero/log-output-reader-app@sha256:0165fdb2a9fcb01fef9e4b2789ff28c234078c5e92605b1ac031ca1396fa5005
           ports:
             - containerPort: 8091
           volumeMounts:
