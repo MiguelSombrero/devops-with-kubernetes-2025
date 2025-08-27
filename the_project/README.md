@@ -2,7 +2,7 @@
 
 ## Deploy to Kubernetes
 
-Deploy recursively all resources (pvc, todo-app, todo-backend)
+Deploy recursively all resources (namespace, pvc, todo-app, todo-backend)
 
 ```bash
 kubectl apply -R -f manifests/
