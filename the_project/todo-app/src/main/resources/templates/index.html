@@ -5,7 +5,14 @@
     <title>The Project - Todo App</title>
 </head>
 <body>
-<h1 th:text="${message}">Default Message</h1>
+<h1>The Project - Todo App</h1>
 <img id="randomImg" th:src="@{|${imageEndpoint}|}" alt="Satunnainen kuva"/>
+<form>
+    <input type="text" id="todoInput" name="todo" maxlength="140" placeholder="Enter a todo (max 140 chars)" required/>
+    <button type="submit">Create todo</button>
+</form>
+<ul>
+    <li th:each="todo : ${todos}" th:text="${todo.content}"></li>
+</ul>
 </body>
 </html>

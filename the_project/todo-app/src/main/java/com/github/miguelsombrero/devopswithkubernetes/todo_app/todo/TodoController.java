@@ -12,16 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 class TodoController {
 
     private final ImageService imageService;
+    private final TodoService todoService;
 
-    TodoController(ImageService imageService) {
+    TodoController(ImageService imageService, TodoService todoService) {
         this.imageService = imageService;
+        this.todoService = todoService;
     }
 
     @GetMapping
     public String getTodos(Model model) {
-        model.addAttribute("message", "The Project - Todo App");
         model.addAttribute("imageEndpoint", "/random-image");
-
+        model.addAttribute("todos", todoService.getTodos());
         return "index";
     }
 

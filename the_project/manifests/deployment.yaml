@@ -20,7 +20,7 @@ spec:
             claimName: shared-image-claim
       containers:
         - name: todo-app
-          image: miguelsombrero/todo-app@sha256:9e018f3d692dd238da0fa99a7b4114b090ee1019c66d535ea40fdfe18655f965
+          image: miguelsombrero/todo-app@sha256:d570d4f90f25ef1724b3a6db8decedcc0831f11f1d0e88ff8e6521f59407ae9d
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
