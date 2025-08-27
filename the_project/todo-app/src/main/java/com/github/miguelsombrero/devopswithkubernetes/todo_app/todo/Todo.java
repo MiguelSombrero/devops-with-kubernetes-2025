@@ -1,4 +1,4 @@
 package com.github.miguelsombrero.devopswithkubernetes.todo_app.todo;
 
-record Todo(long id, String content) {
+record Todo(String id, String content) {
 }

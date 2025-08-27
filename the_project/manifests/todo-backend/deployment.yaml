@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-backend-dep
+  labels:
+    app: todo-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-backend
+  template:
+    metadata:
+      labels:
+        app: todo-backend
+    spec:
+      containers:
+        - name: todo-app
+          image: miguelsombrero/todo-backend@sha256:b5809ad3f4ce806ffacc1df9f6210659bdff8448147c4a90fa74fe583c3c3607
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8083

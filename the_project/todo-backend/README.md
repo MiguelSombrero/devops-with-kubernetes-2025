@@ -1,15 +1,31 @@
-# Todo-app
+# Todo-backend
+
+## Use
+
+NOTICE: paths below is for localhost. In k3d cluster, port is 8081.
+
+GET `/todos` - get all todos
+
+```bash
+curl -X GET http://localhost:8083/todos
+```
+
+POST `/todos` - create new todo
+
+```bash
+curl -X POST http://localhost:8083/todos -H "Content-Type: application/json" -d '{"content": "Learning Kubernetes"}'
+```
 
 ## For developer (me)
 
 Build image and push it to Docker Hub:
 
 ```bash
-  docker build -t miguelsombrero/todo-app:latest .
+  docker build -t miguelsombrero/todo-backend:latest .
 ```
 
 ```bash
-  docker push miguelsombrero/todo-app:latest
+  docker push miguelsombrero/todo-backend:latest
 ```
 
 There was some mystical problems when running the app in a k3d cluster, so I had to use `docker buildx` to build the
@@ -18,15 +34,14 @@ image.
 It might have something to do with Mac M2 (ARM-architecture) machine which I use for building the image, so I made
 multi-arch image.
 
-EDIT: maybe it was something else since images seems to be working now with basic `docker build` command too.
-Anyway, here are the commands for multi-arch image just in case:
+So if `docker build`fails, try `docker buildx` command below:
 
 ### Build and push multi-arch image
 
 Requires login to Docker Hub. Run command in todo-app directory.
 
 ```bash
-docker buildx build --platform linux/amd64,linux/arm64 -t miguelsombrero/todo-app:latest --push .
+docker buildx build --platform linux/amd64,linux/arm64 -t miguelsombrero/todo-backend:latest --push .
 ```
 
 If you (I) got error "Multi-platform build is not supported for the docker driver", you need to switch `buildx` driver

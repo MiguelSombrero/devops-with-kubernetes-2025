@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -24,6 +25,12 @@ class TodoController {
         model.addAttribute("imageEndpoint", "/random-image");
         model.addAttribute("todos", todoService.getTodos());
         return "index";
+    }
+
+    @PostMapping
+    public String addTodo(Todo todo) {
+        todoService.saveTodo(todo);
+        return "redirect:/";
     }
 
     @GetMapping("/random-image")

@@ -7,8 +7,9 @@
 <body>
 <h1>The Project - Todo App</h1>
 <img id="randomImg" th:src="@{|${imageEndpoint}|}" alt="Satunnainen kuva"/>
-<form>
-    <input type="text" id="todoInput" name="todo" maxlength="140" placeholder="Enter a todo (max 140 chars)" required/>
+<form th:action="@{/}" method="post">
+    <input type="text" id="todoInput" name="content" maxlength="140" placeholder="Enter a todo (max 140 chars)"
+           required/>
     <button type="submit">Create todo</button>
 </form>
 <ul>

@@ -2,16 +2,10 @@
 
 ## Deploy to Kubernetes
 
-### Deploy persistent volumes
+Deploy recursively all resources (pvc, todo-app, todo-backend)
 
 ```bash
-kubectl apply -f manifests/infra
-```
-
-### Deploy todo-app
-
-```bash
-kubectl apply -f manifests
+kubectl apply -R -f manifests/
 ```
 
 ## Use
