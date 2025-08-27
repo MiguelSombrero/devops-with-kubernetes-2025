@@ -2,24 +2,10 @@
 
 ## Deploy to Kubernetes
 
-### Deploy persistent volumes
+Deploy recursively all resources (namespace, pvc, log-output-app, ping-pong-app)
 
 ```bash
-kubectl apply -f infra/manifests
-```
-
-### Deploy log-output-app
-
-```bash
-kubectl apply -f log-output-app/manifests
-```
-
-NOTICE: this will also apply mutual ingress for log-output-app and ping-pong-app.
-
-### Deploy ping-pong-app
-
-```bash
-kubectl apply -f ping-pong-app/manifests
+kubectl apply -R -f manifests/
 ```
 
 ## Use
