@@ -14,9 +14,16 @@ spec:
       labels:
         app: todo-app
     spec:
+      volumes:
+        - name: shared-image
+          persistentVolumeClaim:
+            claimName: shared-image-claim
       containers:
         - name: todo-app
-          image: miguelsombrero/todo-app@sha256:1d1985ed2c327ba4dfa88b14eda8f1f7199aafe2c289d23b20a3f49162cf6215
+          image: miguelsombrero/todo-app@sha256:9e018f3d692dd238da0fa99a7b4114b090ee1019c66d535ea40fdfe18655f965
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          volumeMounts:
+          - name: shared-image
+            mountPath: /usr/src/app/files
