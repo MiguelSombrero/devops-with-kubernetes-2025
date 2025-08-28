@@ -17,6 +17,9 @@ spec:
         - name: shared-logs
           persistentVolumeClaim:
             claimName: shared-logs-claim
+        - name: log-config-volume
+          configMap:
+            name: log-config
       containers:
         - name: log-output-writer-app
           image: miguelsombrero/log-output-writer-app@sha256:16b1f58e5cd1d40347324b538e3a3098132f893761aea022aefdb5a96427257b
@@ -27,9 +30,15 @@ spec:
             mountPath: /usr/src/app/files
 
         - name: log-output-reader-app
-          image: miguelsombrero/log-output-reader-app@sha256:0165fdb2a9fcb01fef9e4b2789ff28c234078c5e92605b1ac031ca1396fa5005
+          image: miguelsombrero/log-output-reader-app@sha256:c4e3da9e16a3e287aff420e2488b30ee67e2899061b25c9f6a47989114ae89c2
           ports:
             - containerPort: 8091
           volumeMounts:
           - name: shared-logs
             mountPath: /usr/src/app/files
+          - name: log-config-volume
+            mountPath: /usr/src/app/files/config
+          envFrom:
+          - configMapRef:
+              name: log-config
+          

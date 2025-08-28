@@ -14,7 +14,7 @@ public class LogController {
         this.logService = logService;
     }
 
-    @GetMapping
+    @GetMapping(produces = "text/plain")
     public String getRandomString() {
         return logService.getLogs();
     }

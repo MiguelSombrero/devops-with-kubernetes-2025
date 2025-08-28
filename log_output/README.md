@@ -2,7 +2,7 @@
 
 ## Deploy to Kubernetes
 
-Deploy recursively all resources (namespace, pvc, log-output-app, ping-pong-app)
+Deploy recursively all resources (configmap, namespace, pvc, log-output-app, ping-pong-app)
 
 ```bash
 kubectl apply -R -f manifests/
