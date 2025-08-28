@@ -8,6 +8,12 @@ Deploy recursively all resources (configmap, namespace, pvc, log-output-app, pin
 kubectl apply -R -f manifests/
 ```
 
+NOTICE: If there is also "the project" deployed, it's ingress may clash with this one. You can delete ingress defore deploying by:
+
+```bash
+kubectl delete ing todo-ing -n project
+```
+
 ## Use
 
 Call API when running in k3d cluster:

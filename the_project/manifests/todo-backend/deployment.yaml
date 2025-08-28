@@ -19,5 +19,6 @@ spec:
         - name: todo-app
           image: miguelsombrero/todo-backend@sha256:b5809ad3f4ce806ffacc1df9f6210659bdff8448147c4a90fa74fe583c3c3607
           imagePullPolicy: Always
-          ports:
-            - containerPort: 8083
+          envFrom:
+          - configMapRef:
+              name: todo-backend-config
