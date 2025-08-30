@@ -9,15 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class PongController {
     private static final String text = "Ping / Pongs: ";
 
-    private int count = 0;
+    private final PongService pongService;
+
+    public PongController(PongService pongService) {
+        this.pongService = pongService;
+    }
 
     @GetMapping("/pingpong")
     public String pong() {
-        return text + count++;
+        return text + pongService.incrementAndGetPongs();
     }
 
     @GetMapping("/pings")
     public String getPings() {
-        return text + count;
+        return text + pongService.getPongs();
     }
 }

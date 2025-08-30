@@ -17,6 +17,9 @@ spec:
     spec:
       containers:
         - name: ping-pong-app
-          image: miguelsombrero/ping-pong-app@sha256:2dab63161b073c4a55dd3db0204af94ef55aca3584ffcf77ba219005658ac1b8
-          ports:
-            - containerPort: 8092
+          image: miguelsombrero/ping-pong-app@sha256:950087479b5b16b97f8180d58d9f4597e17cec994605fef04d1dd98f351b6c61
+          envFrom:
+          - configMapRef:
+              name: ping-pong-app-config
+          - secretRef:
+                name: postgres-secret
