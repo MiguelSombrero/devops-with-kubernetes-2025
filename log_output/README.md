@@ -8,7 +8,8 @@ Deploy recursively all resources (configmap, namespace, pvc, log-output-app, pin
 kubectl apply -R -f manifests/
 ```
 
-NOTICE 1: encrypted secrets (secret.enc.yaml) cannot be applied as is. You need to decrypt them first (run in same folder where the key.txt is):
+NOTICE 1: encrypted secrets (secret.enc.yaml) cannot be applied as is. You need to decrypt them first:
+
 ```bash
 sops --decrypt secret.enc.yaml | kubectl apply -f -
 ```

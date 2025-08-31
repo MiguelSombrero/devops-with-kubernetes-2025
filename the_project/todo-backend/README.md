@@ -13,7 +13,7 @@ curl -X GET http://localhost:8083/todos
 POST `/todos` - create new todo
 
 ```bash
-curl -X POST http://localhost:8083/todos -H "Content-Type: application/json" -d '{"content": "Learning Kubernetes"}'
+curl -X POST http://localhost:8083/todos -H "Content-Type: application/json" -d '{"content": "Learning DevOps"}'
 ```
 
 ## For developer (me)
