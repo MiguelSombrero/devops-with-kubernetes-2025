@@ -16,6 +16,12 @@ POST `/todos` - create new todo
 curl -X POST http://localhost:8083/todos -H "Content-Type: application/json" -d '{"content": "Learning DevOps"}'
 ```
 
+Request with extra long content for testing:
+
+```bash
+curl -X POST http://localhost:8083/todos -H "Content-Type: application/json" -d '{"content": "LoremipsumdolorsitametconsecteturadipiscingelitSeddoeiusmodtemporincididuntutlaboreetdoloremagnaaliquautenimadminimveniamsasdfsdfasdfasdsdfsf"}'
+```
+
 ## For developer (me)
 
 Build image and push it to Docker Hub:

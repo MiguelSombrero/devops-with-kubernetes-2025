@@ -16,8 +16,8 @@ spec:
         app: todo-backend
     spec:
       containers:
-        - name: todo-app
-          image: miguelsombrero/todo-backend@sha256:b5809ad3f4ce806ffacc1df9f6210659bdff8448147c4a90fa74fe583c3c3607
+        - name: todo-backend
+          image: miguelsombrero/todo-backend@sha256:3cd0c3056fb7b5b4ab1d921bcb894bdd72a27c8d261af99dbba7aabad73149c8
           imagePullPolicy: Always
           envFrom:
           - configMapRef:

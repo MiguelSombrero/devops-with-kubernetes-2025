@@ -42,6 +42,7 @@ metadata:
   name: postgres-svc
   labels:
     app: postgres
+  namespace: exercises
 spec:
   ports:
   - port: 5432

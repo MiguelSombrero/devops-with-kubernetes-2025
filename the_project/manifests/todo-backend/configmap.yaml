@@ -5,3 +5,5 @@ metadata:
   namespace: project
 data:
   PORT: "8080"
+  POSTGRES_HOST: "postgres-svc"
+  POSTGRES_USER: "postgres"
