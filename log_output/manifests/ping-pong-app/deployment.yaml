@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: ping-pong-app
-          image: miguelsombrero/ping-pong-app@sha256:950087479b5b16b97f8180d58d9f4597e17cec994605fef04d1dd98f351b6c61
+          image: miguelsombrero/ping-pong-app@sha256:70fe4666aeb6887fbe81b0000c468d7afb0c7c7fbd423479db9fa3482eb40f0e
           envFrom:
           - configMapRef:
               name: ping-pong-app-config

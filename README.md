@@ -30,12 +30,17 @@ Repository for exercises of DevOps With Kubernetes 2025 course: https://courses.
 - [2.6](https://github.com/MiguelSombrero/devops-with-kubernetes-2025/tree/2.6/the_project)
 - [2.7](https://github.com/MiguelSombrero/devops-with-kubernetes-2025/tree/2.7/log_output)
 - [2.8](https://github.com/MiguelSombrero/devops-with-kubernetes-2025/tree/2.8/the_project)
-- [2.9] SKIPPED!
+- 2.9 SKIPPED!
 - [2.10](https://github.com/MiguelSombrero/devops-with-kubernetes-2025/tree/2.10/the_project)
+
+### Chapter 3
+
+- [3.1](https://github.com/MiguelSombrero/devops-with-kubernetes-2025/tree/3.1/log_output)
+
 
 ## Notes
 
-### Create k3d cluster from scratch
+### Create local k3d cluster from scratch
 
 Create cluster with 2 agents and port 8081 open from the cluster:
 
@@ -63,3 +68,24 @@ kubectl create namespace loki-stack
 helm upgrade --install loki --namespace=loki-stack grafana/loki-stack --set loki.image.tag=2.9.3
 ```
 
+### Create GKE cluster
+
+**NOTICE: delete cluster every time you don't need it to save credits!**
+
+Create cluster:
+
+```bash
+gcloud container clusters create dwk-cluster --zone=europe-north1-b --cluster-version=1.32 --disk-size=32 --num-nodes=3 --machine-type=e2-micro
+```
+
+Change to created cluster if not already:
+
+````bash
+gcloud container clusters get-credentials dwk-cluster --zone=europe-north1-b
+````
+
+Delete cluster:
+
+```bash
+gcloud container clusters delete dwk-cluster --zone=europe-north1-b
+```

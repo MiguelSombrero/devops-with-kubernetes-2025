@@ -22,7 +22,8 @@ spec:
               containerPort: 5432
           volumeMounts:
             - name: postgres-data-storage
-              mountPath: /data
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres
           envFrom:
             - secretRef:
                 name: postgres-secret
@@ -31,10 +32,10 @@ spec:
         name: postgres-data-storage
       spec:
         accessModes: ["ReadWriteOnce"]
-        storageClassName: local-path
         resources:
           requests:
-            storage: 1G
+            storage: 1Gi
+        storageClassName: standard-rwo
 ---
 apiVersion: v1
 kind: Service
