@@ -22,7 +22,8 @@ spec:
             name: log-config
       containers:
         - name: log-output-writer-app
-          image: miguelsombrero/log-output-writer-app@sha256:16b1f58e5cd1d40347324b538e3a3098132f893761aea022aefdb5a96427257b
+          image: miguelsombrero/log-output-writer-app:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8090
           volumeMounts:
@@ -30,7 +31,8 @@ spec:
             mountPath: /usr/src/app/files
 
         - name: log-output-reader-app
-          image: miguelsombrero/log-output-reader-app@sha256:c4e3da9e16a3e287aff420e2488b30ee67e2899061b25c9f6a47989114ae89c2
+          image: miguelsombrero/log-output-reader-app:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8091
           volumeMounts:
@@ -41,4 +43,3 @@ spec:
           envFrom:
           - configMapRef:
               name: log-config
-          

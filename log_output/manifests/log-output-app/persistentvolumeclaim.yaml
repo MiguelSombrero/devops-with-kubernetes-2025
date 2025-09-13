@@ -4,7 +4,7 @@ metadata:
   name: shared-logs-claim
   namespace: exercises
 spec:
-  storageClassName: shared-logs-pv
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
