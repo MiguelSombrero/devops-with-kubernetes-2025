@@ -4,7 +4,7 @@ metadata:
   name: shared-pv
   namespace: exercises
 spec:
-  storageClassName: shared-logs-pv
+  storageClassName: standard
   capacity:
     storage: 1Gi # Could be e.q. 500Gi. Small amount is to preserve space when testing locally
   volumeMode: Filesystem # This declares that it will be mounted into pods as a directory

@@ -37,6 +37,7 @@ Repository for exercises of DevOps With Kubernetes 2025 course: https://courses.
 
 - [3.1](https://github.com/MiguelSombrero/devops-with-kubernetes-2025/tree/3.1/log_output)
 - 3.2 SKIPPED!
+- [3.3](https://github.com/MiguelSombrero/devops-with-kubernetes-2025/tree/3.3/log_output)
 
 
 ## Notes
@@ -76,13 +77,13 @@ helm upgrade --install loki --namespace=loki-stack grafana/loki-stack --set loki
 Create cluster:
 
 ```bash
-gcloud container clusters create dwk-cluster --zone=europe-north1-b --cluster-version=1.32 --disk-size=32 --num-nodes=3 --machine-type=e2-micro
+gcloud container clusters create dwk-cluster --zone=europe-north1-b --cluster-version=1.32 --disk-size=64 --num-nodes=4
 ```
 
-Change to created cluster if not already:
+Install Gateway API to the cluster:
 
 ````bash
-gcloud container clusters get-credentials dwk-cluster --zone=europe-north1-b
+gcloud container clusters update dwk-cluster --location=europe-north1-b --gateway-api=standard
 ````
 
 Delete cluster:

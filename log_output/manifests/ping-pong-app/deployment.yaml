@@ -17,7 +17,10 @@ spec:
     spec:
       containers:
         - name: ping-pong-app
-          image: miguelsombrero/ping-pong-app@sha256:70fe4666aeb6887fbe81b0000c468d7afb0c7c7fbd423479db9fa3482eb40f0e
+          image: miguelsombrero/ping-pong-app:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
           envFrom:
           - configMapRef:
               name: ping-pong-app-config
