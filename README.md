@@ -38,6 +38,7 @@ Repository for exercises of DevOps With Kubernetes 2025 course: https://courses.
 - [3.1](https://github.com/MiguelSombrero/devops-with-kubernetes-2025/tree/3.1/log_output)
 - 3.2 SKIPPED!
 - [3.3](https://github.com/MiguelSombrero/devops-with-kubernetes-2025/tree/3.3/log_output)
+- [3.4](https://github.com/MiguelSombrero/devops-with-kubernetes-2025/tree/3.4/log_output)
 
 
 ## Notes
